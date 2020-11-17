@@ -1,0 +1,404 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url(images/pointer.png) 32 32, auto;
+  outline: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+main {
+  height: 100%;
+}
+main img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.header {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.header h1 {
+  font-size: 50px;
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  width: 210px;
+  text-align: center;
+}
+.header input {
+  height: 40px;
+  font-size: 45px;
+  font-weight: bolder;
+  border: none;
+  text-align: center;
+  width: 210px;
+  text-align: center;
+  height: 45px;
+  border: black solid 2px;
+}
+.header span {
+  background-color: white;
+  font-size: 32px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  border: black solid 2px;
+  padding: 10px;
+  text-align: center;
+  width: 80px;
+}
+
+.gun-range {
+  display: none;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 70%;
+  width: auto;
+  margin: 0 50px;
+  align-items: center;
+  justify-items: center;
+}
+.gun-range div {
+  border-radius: 50%;
+  border: 1px black solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0.5px 0.5px black, -0.5px 0.5px black;
+}
+
+.target-miss {
+  background-color: whitesmoke;
+}
+
+.target-poor {
+  background-color: red;
+}
+
+.target-average {
+  background-color: orange;
+}
+
+.target-great {
+  background-color: yellow;
+}
+
+.target-perfect {
+  background-color: green;
+}
+
+.target-small {
+  height: 120px;
+  width: 120px;
+}
+.target-small .target-poor {
+  height: 90px;
+  width: 90px;
+}
+.target-small .target-poor .target-average {
+  height: 60px;
+  width: 60px;
+}
+.target-small .target-poor .target-average .target-great {
+  height: 30px;
+  width: 30px;
+}
+.target-small .target-poor .target-average .target-great .target-perfect {
+  height: 10px;
+  width: 10px;
+}
+
+.target-medium {
+  height: 150px;
+  width: 150px;
+}
+.target-medium .target-poor {
+  height: 120px;
+  width: 120px;
+}
+.target-medium .target-poor .target-average {
+  height: 80px;
+  width: 80px;
+}
+.target-medium .target-poor .target-average .target-great {
+  height: 40px;
+  width: 40px;
+}
+.target-medium .target-poor .target-average .target-great .target-perfect {
+  height: 12px;
+  width: 12px;
+}
+
+.target-large {
+  height: 175px;
+  width: 175px;
+}
+.target-large .target-poor {
+  height: 140px;
+  width: 140px;
+}
+.target-large .target-poor .target-average {
+  height: 90px;
+  width: 90px;
+}
+.target-large .target-poor .target-average .target-great {
+  height: 45px;
+  width: 45px;
+}
+.target-large .target-poor .target-average .target-great .target-perfect {
+  height: 15px;
+  width: 15px;
+}
+
+.gun-area div img {
+  position: absolute;
+  z-index: 1;
+}
+.gun-area div #gun {
+  height: 180px;
+  width: 280px;
+  bottom: 0;
+}
+.gun-area div #shot {
+  pointer-events: none;
+  height: 85px;
+  width: 85px;
+  display: none;
+}
+
+.start-menu {
+  height: 90%;
+  width: 94%;
+  margin: auto;
+  border: 5px solid black;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  background-image: url(./images/metal.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.start-menu h2 {
+  font-size: 100px;
+  margin-bottom: 50px;
+  text-decoration: underline;
+  background-color: #1c2022;
+  padding: 10px 35px;
+  border-radius: 6px;
+  border: 2px solid black;
+  color: #3ec103;
+  opacity: 94%;
+  font-weight: bold;
+}
+.start-menu p {
+  background-color: #1c2022;
+  color: #3ec103;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 4px 15px;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+.start-menu button {
+  font-size: 60px;
+  border-radius: 6px;
+  border: solid 2px black;
+  background-color: #3ec103;
+  padding: 5px 15px;
+  color: #1c2022;
+  opacity: 90%;
+  font-weight: bolder;
+}
+.start-menu button:hover {
+  opacity: 100%;
+  border: solid 2px whitesmoke;
+  color: whitesmoke;
+}
+
+.game-over {
+  height: 72%;
+  width: 50%;
+  margin: auto;
+  border: 5px solid black;
+  border-radius: 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 9%;
+  left: 25%;
+  background-image: url(./images/metal.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.game-over h2 {
+  font-size: 100px;
+  margin-bottom: 70px;
+  text-decoration: underline;
+  background-color: #1c2022;
+  padding: 10px 35px;
+  border-radius: 6px;
+  border: 2px solid black;
+  color: #3ec103;
+  opacity: 94%;
+  font-weight: bold;
+}
+.game-over h3 {
+  padding: 5px 15px;
+  background-color: #1c2022;
+  color: #3ec103;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 4px 15px;
+  font-size: 35px;
+}
+.game-over p {
+  display: none;
+  background-color: #1c2022;
+  color: #3ec103;
+  font-weight: bold;
+  border: 1px solid black;
+  padding: 4px 15px;
+  font-size: 35px;
+}
+.game-over input {
+  width: 308px;
+  font-size: 75px;
+  font-weight: bold;
+  border: none;
+  text-align: center;
+  padding: 15px 5px;
+  font-weight: bold;
+  margin: 20px 0;
+  border: solid black 4px;
+}
+.game-over button {
+  font-size: 50px;
+  border-radius: 10px;
+  border: solid 2px black;
+  background-color: #3ec103;
+  padding: 5px 15px;
+  color: #1c2022;
+  opacity: 90%;
+  font-weight: bolder;
+  margin: 20px 0;
+}
+.game-over button:hover {
+  opacity: 100%;
+  border: solid 2px whitesmoke;
+  color: whitesmoke;
+}
+
+#target-one, #target-three {
+  position: relative;
+  animation: animateOne 3s infinite;
+  animation-direction: normal;
+  animation-delay: -0.1s;
+}
+@keyframes animateOne {
+  0% {
+    background: white;
+    left: -30%;
+    top: -30%;
+  }
+  35% {
+    background: lightgray;
+    left: -30%;
+    top: 30%;
+  }
+  50% {
+    background: white;
+    left: 30%;
+    top: -30%;
+  }
+  75% {
+    background: lightgray;
+    left: 30%;
+    top: 30%;
+  }
+  100% {
+    background: white;
+    left: -30%;
+    top: -30%;
+  }
+}
+
+#target-three {
+  animation-direction: reverse;
+}
+
+#target-two, #target-five {
+  position: relative;
+  animation: animateTwo 2s infinite;
+  animation-direction: alternate;
+  animation-delay: -0.1s;
+}
+@keyframes animateTwo {
+  0% {
+    left: -35%;
+  }
+  50% {
+    left: 35%;
+  }
+  100% {
+    left: -35%;
+  }
+}
+
+#target-five {
+  animation-direction: alternate-reverse;
+}
+
+#target-four, #target-six {
+  position: relative;
+  animation: animateThree 3s infinite;
+  animation-direction: normal;
+  animation-delay: -0.1s;
+}
+@keyframes animateThree {
+  0% {
+    background: whitesmoke;
+    top: -25%;
+  }
+  50% {
+    background: lightgray;
+    top: 20%;
+  }
+  100% {
+    background: whitesmoke;
+    top: -25%;
+  }
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media only screen and (max-width: 1450px) {
+  .start-menu h2 {
+    font-size: 65px;
+  }
+
+  .game-over h2 {
+    font-size: 65px;
+  }
+}

@@ -1,0 +1,110 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon_package_v0.16/safari-pinned-tab.svg" color="#ff0000">
+    <meta name="msapplication-TileColor" content="#ff0000">
+    <meta name="theme-color" content="#000000">
+    <title>Gun Game</title>
+</head>
+<body>
+    <main class="no-select">
+        <img src="images/unsplash.jpg" alt="old wall">
+        <header class="header">
+            <h1>SCORE</h1>
+            <input type="text" id="counter" value="0" readonly>
+            <span id="time">10</span>
+        </header>
+
+        <section class="gun-range">
+            <div id="target-one" class="target-small target-miss"> 
+                <div class="target-poor"> 
+                    <div class="target-average"> 
+                        <div class="target-great"> 
+                            <div class="target-perfect"> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="target-two" class="target-medium target-miss">
+                <div class="target-poor">
+                    <div class="target-average">
+                        <div class="target-great">
+                            <div class="target-perfect"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="target-three" class="target-small target-miss">
+                <div class="target-poor">
+                    <div class="target-average">
+                        <div class="target-great">
+                            <div class="target-perfect"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="target-four" class="target-large target-miss">
+                <div class="target-poor">
+                    <div class="target-average">
+                        <div class="target-great">
+                            <div class="target-perfect"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="target-five" class="target-medium target-miss">
+                <div class="target-poor">
+                    <div class="target-average">
+                        <div class="target-great">
+                            <div class="target-perfect"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="target-six" class="target-large target-miss">
+                <div class="target-poor">
+                    <div class="target-average">
+                        <div class="target-great">
+                            <div class="target-perfect"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gun-area">
+            <div>
+                <img id="shot" src="images/bang.png" alt="explosion">
+                <img id="gun" src="images/first-person-shooter-png-2.png" alt="gun being held">
+            </div>
+        </section>
+        
+        <section class="start-menu">
+            <h2>Gun Game</h2>
+            <p>If at first you don't succeed, call in an airstrike.</p>
+            <button id="start-game">START</button>
+        </section>
+
+        <section class="game-over">
+            <h2>GAME OVER</h2>
+            <h3>Your score was . . .</h3>
+            <input type="text" id="final-score" value="0" readonly>
+            <p id="good-score">Incredible accuracy!</p>
+            <p id="okay-score">Good job.</p>
+            <p id="bad-score">Better luck next time.</p>
+            <button id="play-again">PLAY AGAIN</button>
+        </section>
+    </main>
+    <script rel="script" src="main.js"></script>
+</body>
+</html>
