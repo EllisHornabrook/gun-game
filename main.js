@@ -11,7 +11,6 @@ const header = document.querySelector('.header')
 const gunRange = document.querySelector('.gun-range')
 const startMenu = document.querySelector('.start-menu')
 const gameOver = document.querySelector('.game-over')
-const bang = document.querySelector("#shot")
 const gun = document.getElementById('gun');
 
 const clickScores = {
@@ -26,7 +25,6 @@ const addShotEventListeners = () => {
     for (const [className, score] of Object.entries(clickScores)) {
         document.querySelectorAll(className).forEach(element => {
             element.addEventListener('click', (event) => {
-                shot();
                 inputOne.value = parseInt(inputOne.value) + score;
                 inputTwo.value = parseInt(inputTwo.value) + score;
                 element.closest(".target-miss").style.zIndex = "-2";
@@ -37,8 +35,6 @@ const addShotEventListeners = () => {
 };
 
 const resetGame = () => {
-    console.log("click")
-    shot();
     gameOver.style.display = "none";
     header.style.display = "flex";
     startMenu.style.display = "none";
@@ -72,34 +68,15 @@ const timer = () => {
     };
 };
 
-const shot = () => {
-    bang.style.display = "inline";
-    setTimeout(() => bang.style.display = "none", 110)
-};
-
-document.addEventListener('click', () => {
-    shot();
-});
-
-
-
 const onMouseMove = (e) =>{
   gun.style.left = e.pageX;
 };
 document.addEventListener('mousemove', onMouseMove);
 
-document.addEventListener('mousemove', function(ev){
-    document.getElementById('shot').style.transform = 'translateY('+(ev.clientY-35)+'px)';
-    document.getElementById('shot').style.transform += 'translateX('+(ev.clientX-41.5)+'px)';            
-},false);
-
-
 startTimer = (duration, display) => {
-    console.log("timer")
     for (let i = 0; i <= duration; i++) {
         setTimeout(() => {
             display.textContent = duration - i;
-            console.log(i)
             if (i === duration) timer()
         }, (i * 1000));
     }
