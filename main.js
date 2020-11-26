@@ -44,7 +44,6 @@ const resetGame = () => {
     targetMiss.forEach(element => element.style.zIndex = "0");
     display = document.querySelector('#time');
     startTimer(10, display);
-    addShotEventListeners();
 }
 
 const timer = () => {
@@ -83,4 +82,4 @@ startTimer = (duration, display) => {
 };
 
 playAgain.addEventListener('click', resetGame);
-startGame.addEventListener('click', resetGame);
+startGame.addEventListener('click', resetGame, addShotEventListeners());
